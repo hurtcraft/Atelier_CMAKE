@@ -70,3 +70,14 @@ jobs:
             cmake ..
             make
             ./src/calculator mul 10 5
+  Deploiement:
+    runs-on: ubuntu-latest
+    needs:
+      - Test_Add
+      - Test_Div
+      - Test_Sub
+      - Test_Mul
+    steps:
+      - name: Étape de déploiement
+        run: |
+          echo "Déploiement en cours..."
